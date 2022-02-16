@@ -38,11 +38,14 @@ module.exports = app;
  */
 
 app.get("/json", (req, res) => {
-  const message =
-    process.env.MESSAGE_STYLE === "uppercase" ? "HELLO JSON" : "Hello json";
-  res.json({
-    message,
-  });
+  // const message =
+  //   process.env.MESSAGE_STYLE === "uppercase" ? "HELLO JSON" : "Hello json";
+  // let message = "Hello World".toUpperCase();
+  if (process.env.MESSAGE_STYLE === "uppercase") {
+    res = "Hello World".toUpperCase();
+  } else {
+    res = "Hello World";
+  }
 });
 
 /**
