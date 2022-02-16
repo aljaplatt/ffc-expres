@@ -36,17 +36,23 @@ module.exports = app;
  *
  * *
  */
-let message = { message: "Hello json" };
+// let message = { message: "Hello json" };
+
+// app.get("/json", (req, res) => {
+//   // const message =
+//   //   process.env.MESSAGE_STYLE === "uppercase" ? "HELLO JSON" : "Hello json";
+//   // let message = "Hello World".toUpperCase();
+//   if (process.env.MESSAGE_STYLE === "uppercase") {
+//     return res.json({ message: "HELLO JSON" });
+//   } else {
+//     return res.json(message);
+//   }
+// });
 
 app.get("/json", (req, res) => {
-  // const message =
-  //   process.env.MESSAGE_STYLE === "uppercase" ? "HELLO JSON" : "Hello json";
-  // let message = "Hello World".toUpperCase();
-  if (process.env.MESSAGE_STYLE === "uppercase") {
-    return res.json({ message: "HELLO JSON" });
-  } else {
-    return res.json(message);
-  }
+  process.env.MESSAGE_STYLE === "uppercase"
+    ? res.json({ message: "HELLO JSON" })
+    : res.json({ message: "Hello json" });
 });
 
 /**
