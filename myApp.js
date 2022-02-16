@@ -36,7 +36,7 @@ module.exports = app;
  *
  * *
  */
-let message = { message: "HELLO JSON" };
+let message = { message: "Hello json" };
 
 app.get("/json", (req, res) => {
   // const message =
