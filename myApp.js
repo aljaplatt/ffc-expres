@@ -49,11 +49,15 @@ module.exports = app;
 //   }
 // });
 
-app.get("/json", (req, res) => {
-  process.env.MESSAGE_STYLE === "uppercase"
-    ? res.json({ message: "HELLO JSON" })
-    : res.json({ message: "Hello json" });
-});
+const message = "Hello json";
+app.get("/json", (req, res) =>
+  res.json({
+    message:
+      process.env.MESSAGE_STYLE === "uppercase"
+        ? message.toUpperCase()
+        : message,
+  })
+);
 
 /**
  * The .env file is a hidden file that is used to pass environment variables to your application. This file is secret, no one but you can access it, and it can be used to store data that you want to keep private or hidden. For example, you can store API keys from external services or your database URI. You can also use it to store configuration options. By setting configuration options, you can change the behavior of your application, without the need to rewrite some code.
