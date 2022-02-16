@@ -42,9 +42,9 @@ app.get("/json", (req, res) => {
   //   process.env.MESSAGE_STYLE === "uppercase" ? "HELLO JSON" : "Hello json";
   // let message = "Hello World".toUpperCase();
   if (process.env.MESSAGE_STYLE === "uppercase") {
-    res = "Hello World".toUpperCase();
+    res.json({ message: "HELLO JSON" });
   } else {
-    res = "Hello World";
+    res.json({ message: "Hello World" });
   }
 });
 
