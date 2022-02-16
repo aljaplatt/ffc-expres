@@ -36,6 +36,7 @@ module.exports = app;
  *
  * *
  */
+let message = { message: "Hello json" };
 
 app.get("/json", (req, res) => {
   // const message =
@@ -44,7 +45,7 @@ app.get("/json", (req, res) => {
   if (process.env.MESSAGE_STYLE === "uppercase") {
     res.json({ message: "HELLO JSON" });
   } else {
-    res.json({ message: "Hello World" });
+    res.json(message);
   }
 });
 
