@@ -1,7 +1,9 @@
 var express = require("express");
+let bodyParser = require("body-parser");
 
 var app = express();
 // console.log("Hello World");
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
   const { method, path } = req;
