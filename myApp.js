@@ -30,6 +30,13 @@ app.get("/name", (req, res) => {
   });
 });
 
+app.post("/name", (req, res) => {
+  // console.log(req.body);
+  res.json({
+    name: `${req.body.first} ${req.body.last}`,
+  });
+});
+
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
   app.use(express.static(__dirname + "/public"));
